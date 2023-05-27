@@ -15,7 +15,7 @@ void Opcoes()
 {     
         // ! no readline é para ser usado quando não queremos que o mesmo retorne valor nulo
         string opcaoEscolhida = Console.ReadLine()!;
-        int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida) ;
+    int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida);
 
     switch (opcaoEscolhidaNumerica)
     {
