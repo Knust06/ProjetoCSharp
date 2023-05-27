@@ -1,7 +1,7 @@
 ﻿// Musiquer
 string msgBoasVindas = "Boas vindas ao Musiquer";
 
-
+List<string> listaDasBandas = new List<string>();
 
 void Escrever(string msg)
     {
@@ -12,7 +12,7 @@ void EscreverAcao(string msg)
     Console.Write(msg);
 }
 void Opcoes()
-    {
+{     
         // ! no readline é para ser usado quando não queremos que o mesmo retorne valor nulo
         string opcaoEscolhida = Console.ReadLine()!;
         int opcaoEscolhidaNumerica = int.Parse(opcaoEscolhida) ;
@@ -21,7 +21,8 @@ void Opcoes()
     {
         case 1: RegistrarBandas();
             break;
-        case 2: Escrever("Você digitou a opção " + opcaoEscolhida);
+        case 2:
+            ExibirBandasRegistradas();
             break;
         case 3:
             Escrever("Você digitou a opção " + opcaoEscolhida);
@@ -43,14 +44,33 @@ void Opcoes()
 void RegistrarBandas()
 {
     Console.Clear();
+    Escrever("****************************");
     Escrever("Registro de bandas");
+    Escrever("****************************");
     Escrever("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
     Escrever($"A banda {nomeDaBanda} foi registrada com sucesso");
+    listaDasBandas.Add(nomeDaBanda);
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesMenu();
 
+}
+
+void ExibirBandasRegistradas()
+{
+    Console.Clear();
+    Escrever("*********************************");
+    Escrever("Exibindo as bandas registadas");
+    Escrever("*********************************");
+    for (int i = 0; i < listaDasBandas.Count; i++)
+    {
+        Escrever($"Banda: {listaDasBandas[i]}");
+    }
+    Escrever("Aperte em qualquer tecla para voltar ao menu principal");
+    Console.ReadKey();
+    Console.Clear();
+    ExibirOpcoesMenu();
 }
 
 void ExibirBoasVindas()
