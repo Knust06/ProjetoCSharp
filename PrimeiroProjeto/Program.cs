@@ -1,7 +1,7 @@
 ﻿// Musiquer
 string msgBoasVindas = "Boas vindas ao Musiquer";
 
-List<string> listaDasBandas = new List<string>();
+List<string> listaDasBandas = new List<string> { "NEFFEX", "Beatles", "Machine Gun Kelly" };
 
 void Escrever(string msg)
     {
@@ -46,7 +46,7 @@ void RegistrarBandas()
     Console.Clear();
     Escrever("****************************");
     Escrever("Registro de bandas");
-    Escrever("****************************");
+    Escrever("****************************\n");
     Escrever("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
     Escrever($"A banda {nomeDaBanda} foi registrada com sucesso");
@@ -62,12 +62,12 @@ void ExibirBandasRegistradas()
     Console.Clear();
     Escrever("*********************************");
     Escrever("Exibindo as bandas registadas");
-    Escrever("*********************************");
+    Escrever("*********************************\n");
     for (int i = 0; i < listaDasBandas.Count; i++)
     {
         Escrever($"Banda: {listaDasBandas[i]}");
     }
-    Escrever("Aperte em qualquer tecla para voltar ao menu principal");
+    Escrever("\nAperte em qualquer tecla para voltar ao menu principal");
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesMenu();
