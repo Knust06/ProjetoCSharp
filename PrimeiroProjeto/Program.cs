@@ -25,7 +25,7 @@ void Opcoes()
             ExibirBandasRegistradas();
             break;
         case 3:
-            Escrever("Você digitou a opção " + opcaoEscolhida);
+            AvaliarBanda();
             break;
         case 4:
             Escrever("Você digitou a opção " + opcaoEscolhida);
@@ -71,6 +71,12 @@ void ExibirBandasRegistradas()
     Console.ReadKey();
     Console.Clear();
     ExibirOpcoesMenu();
+}
+
+void AvaliarBanda()
+{
+    Console.Clear();
+
 }
 
 void ExibirBoasVindas()
