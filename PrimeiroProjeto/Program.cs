@@ -41,12 +41,22 @@ void Opcoes()
     // ! no readline é para ser usado quando não queremos que o mesmo retorne valor nulo
 }
 
+void MostraTitulo(string titulo)
+{
+    int quantidadeCaracteres = titulo.Length;
+    string estrelas = string.Empty.PadLeft(quantidadeCaracteres, '*');
+    Escrever(estrelas);
+    Escrever(titulo);
+    Escrever(estrelas + "\n");
+}
+
 void RegistrarBandas()
 {
     Console.Clear();
-    Escrever("****************************");
-    Escrever("Registro de bandas");
-    Escrever("****************************\n");
+    MostraTitulo("Registro das bandas");
+    //Escrever("****************************");
+    //Escrever("Registro de bandas");
+    //Escrever("****************************\n");
     Escrever("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
     Escrever($"A banda {nomeDaBanda} foi registrada com sucesso");
@@ -54,15 +64,15 @@ void RegistrarBandas()
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesMenu();
-
 }
 
 void ExibirBandasRegistradas()
 {
     Console.Clear();
-    Escrever("******************************");
-    Escrever("Exibindo as bandas registadas");
-    Escrever("******************************\n");
+    MostraTitulo("Exibindo as bandas registradas");
+    //Escrever("******************************");
+    //Escrever("Exibindo as bandas registadas");
+    //Escrever("******************************\n");
     //for (int i = 0; i < listaDasBandas.Count; i++)
     //{
     //    Escrever($"Banda: {listaDasBandas[i]}");
