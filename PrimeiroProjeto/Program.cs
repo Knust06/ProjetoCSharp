@@ -60,12 +60,17 @@ void RegistrarBandas()
 void ExibirBandasRegistradas()
 {
     Console.Clear();
-    Escrever("*********************************");
+    Escrever("******************************");
     Escrever("Exibindo as bandas registadas");
-    Escrever("*********************************\n");
-    for (int i = 0; i < listaDasBandas.Count; i++)
+    Escrever("******************************\n");
+    //for (int i = 0; i < listaDasBandas.Count; i++)
+    //{
+    //    Escrever($"Banda: {listaDasBandas[i]}");
+    //}
+
+    foreach(string banda in listaDasBandas)
     {
-        Escrever($"Banda: {listaDasBandas[i]}");
+        Escrever($"Banda: {banda}");
     }
     Escrever("\nAperte em qualquer tecla para voltar ao menu principal");
     Console.ReadKey();
