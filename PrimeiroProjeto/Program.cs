@@ -11,6 +11,7 @@ void EscreverAcao(string msg)
 {
     Console.Write(msg);
 }
+
 void Opcoes()
 {     
         // ! no readline é para ser usado quando não queremos que o mesmo retorne valor nulo
