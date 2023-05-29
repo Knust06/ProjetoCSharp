@@ -1,7 +1,11 @@
 ﻿// Musiquer
 string msgBoasVindas = "Boas vindas ao Musiquer";
 
-List<string> listaDasBandas = new List<string> { "NEFFEX", "Beatles", "Machine Gun Kelly" };
+//List<string> listaDasBandas = new List<string> { "NEFFEX", "Beatles", "Machine Gun Kelly" };
+
+Dictionary<string, List<int>> bandas = new Dictionary<string, List<int>>();
+bandas.Add("Linkin Park", new List<int> { 10, 5, 9});
+bandas.Add("NEFFEX", new List<int> { 10, 8, 7 });
 
 void Escrever(string msg)
     {
@@ -61,7 +65,8 @@ void RegistrarBandas()
     Escrever("Digite o nome da banda que deseja registrar");
     string nomeDaBanda = Console.ReadLine()!;
     Escrever($"A banda {nomeDaBanda} foi registrada com sucesso");
-    listaDasBandas.Add(nomeDaBanda);
+    //listaDasBandas.Add(nomeDaBanda);
+    bandas.Add(nomeDaBanda, new List<int>());
     Thread.Sleep(2000);
     Console.Clear();
     ExibirOpcoesMenu();
@@ -79,7 +84,7 @@ void ExibirBandasRegistradas()
     //    Escrever($"Banda: {listaDasBandas[i]}");
     //}
 
-    foreach(string banda in listaDasBandas)
+    foreach(string banda in bandas.Keys)
     {
         Escrever($"Banda: {banda}");
     }
@@ -92,7 +97,8 @@ void ExibirBandasRegistradas()
 void AvaliarBanda()
 {
     Console.Clear();
-
+    MostraTitulo("Avalie a banda");
+    
 }
 
 void ExibirBoasVindas()
