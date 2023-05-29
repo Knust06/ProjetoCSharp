@@ -5,7 +5,7 @@ string msgBoasVindas = "Boas vindas ao Musiquer";
 
 Dictionary<string, List<int>> bandas = new Dictionary<string, List<int>>();
 bandas.Add("Linkin Park", new List<int> { 10, 5, 9});
-bandas.Add("NEFFEX", new List<int> { 10, 8, 7 });
+bandas.Add("NEFFEX", new List<int> ());
 
 void Escrever(string msg)
     {
@@ -67,7 +67,7 @@ void RegistrarBandas()
     Escrever($"A banda {nomeDaBanda} foi registrada com sucesso");
     //listaDasBandas.Add(nomeDaBanda);
     bandas.Add(nomeDaBanda, new List<int>());
-    Thread.Sleep(2000);
+    Thread.Sleep(3000);
     Console.Clear();
     ExibirOpcoesMenu();
 }
@@ -96,9 +96,32 @@ void ExibirBandasRegistradas()
 
 void AvaliarBanda()
 {
+    //Digitar a banda a ser avaliada
+    //Ver se a banda existe no dicionário >> atribuir uma nota
+    // "else" volta ao menu principal
     Console.Clear();
     MostraTitulo("Avalie a banda");
-    
+    EscreverAcao("Digite o nome da banda que deseja avaliar: ");
+    string nomeBanda = Console.ReadLine()!;
+    if (bandas.ContainsKey(nomeBanda))
+    {
+        EscreverAcao($"Qual a nota que a banda {nomeBanda} você deseja atribuí-la ? ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandas[nomeBanda].Add(nota);
+        Escrever($"\nA nota {nota} foi registrada para a banda {nomeBanda}");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpcoesMenu();
+    }
+    else
+    {
+        Escrever($"\nA banda {nomeBanda} não foi encontrada :( ");
+        Escrever("Digite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesMenu();        
+    }
+        
 }
 
 void ExibirBoasVindas()
