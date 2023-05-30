@@ -1,4 +1,5 @@
 ﻿// Musiquer
+
 string msgBoasVindas = "Boas vindas ao Musiquer";
 
 //List<string> listaDasBandas = new List<string> { "NEFFEX", "Beatles", "Machine Gun Kelly" };
@@ -33,7 +34,7 @@ void Opcoes()
             AvaliarBanda();
             break;
         case 4:
-            Escrever("Você digitou a opção " + opcaoEscolhida);
+            MediaBanda();
             break;
         case 5:
             Escrever("Até mais :)");            
@@ -122,6 +123,33 @@ void AvaliarBanda()
         ExibirOpcoesMenu();        
     }
         
+}
+void MediaBanda()
+{
+    Console.Clear();
+    MostraTitulo("Media das bandas");
+    Escrever("Digite a banda que deseja ver a média: ");
+    string nomeBanda = Console.ReadLine()!;
+    if (bandas.ContainsKey (nomeBanda))
+    {
+        List<int> notasBanda = bandas[nomeBanda];
+        Escrever($"{notasBanda.Average()}");
+        Escrever("Digite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();       
+        ExibirOpcoesMenu();
+    }
+    else
+    {
+        Escrever($"\nA banda {nomeBanda} não foi encontrada :( ");
+        Escrever("Digite qualquer tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirOpcoesMenu();
+    }
+    Console.Clear();
+    ExibirOpcoesMenu();
+
 }
 
 void ExibirBoasVindas()
