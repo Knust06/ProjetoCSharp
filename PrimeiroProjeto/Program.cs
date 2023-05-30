@@ -133,7 +133,7 @@ void MediaBanda()
     if (bandas.ContainsKey (nomeBanda))
     {
         List<int> notasBanda = bandas[nomeBanda];
-        Escrever($"{notasBanda.Average()}");
+        Escrever($"A média da banda {nomeBanda} é {notasBanda.Average()}");
         Escrever("Digite qualquer tecla para voltar ao menu principal");
         Console.ReadKey();
         Console.Clear();       
